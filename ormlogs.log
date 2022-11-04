@@ -1,0 +1,27 @@
+[2022-11-01T20:44:43.020Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-01T20:44:43.088Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-01T20:44:43.095Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-01T20:44:43.103Z][QUERY]: START TRANSACTION
+[2022-11-01T20:44:43.104Z][QUERY]: ALTER TABLE users DROP COLUMN created_at DROP COLUMN updated_at DROP COLUMN deleted_at
+[2022-11-01T20:44:43.137Z][FAILED QUERY]: ALTER TABLE users DROP COLUMN created_at DROP COLUMN updated_at DROP COLUMN deleted_at
+[2022-11-01T20:44:43.137Z][QUERY ERROR]: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
+[2022-11-01T20:44:43.138Z]Migration "AlterTableUser1667308210134" failed, error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
+[2022-11-01T20:44:43.138Z][QUERY]: ROLLBACK
+[2022-11-01T20:45:05.582Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-01T20:45:05.603Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-01T20:45:05.609Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-01T20:45:05.611Z][QUERY]: START TRANSACTION
+[2022-11-01T20:45:05.612Z][QUERY]: ALTER TABLE users DROP COLUMN created_at DROP COLUMN updated_at DROP COLUMN deleted_at
+[2022-11-01T20:45:05.643Z][FAILED QUERY]: ALTER TABLE users DROP COLUMN created_at DROP COLUMN updated_at DROP COLUMN deleted_at
+[2022-11-01T20:45:05.643Z][QUERY ERROR]: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
+[2022-11-01T20:45:05.644Z]Migration "AlterTableUser1667308210134" failed, error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
+[2022-11-01T20:45:05.644Z][QUERY]: ROLLBACK
+[2022-11-01T20:46:27.101Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-01T20:46:27.122Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-01T20:46:27.131Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-01T20:46:27.132Z][QUERY]: START TRANSACTION
+[2022-11-01T20:46:27.133Z][QUERY]: ALTER TABLE users DROP COLUMN created_at DROP COLUMN updated_at DROP COLUMN deleted_at
+[2022-11-01T20:46:27.164Z][FAILED QUERY]: ALTER TABLE users DROP COLUMN created_at DROP COLUMN updated_at DROP COLUMN deleted_at
+[2022-11-01T20:46:27.164Z][QUERY ERROR]: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
+[2022-11-01T20:46:27.165Z]Migration "AlterTableUser1667308210134" failed, error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
+[2022-11-01T20:46:27.166Z][QUERY]: ROLLBACK
