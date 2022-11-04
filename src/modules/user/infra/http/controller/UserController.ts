@@ -6,6 +6,7 @@ import DeleteUserService from "../../../service/DeleteUserService";
 import UpdateUserService from "../../../service/UpdateUserService";
 import ListUserService from "../../../service/ListUserService";
 import FindUserService from "../../../service/FindUserService";
+import AuthenticationService from "../../../service/AuthenticationService";
 
 @injectable()
 export class UserController {
@@ -47,5 +48,15 @@ export class UserController {
 
         res.status(201).json(await service.execute(id))
     }
+
+    async authenticate(request: Request, response: Response): Promise<void> {
+        const { email, password } = request.body;
+    
+        const authenticateUserService = container.resolve(AuthenticationService);
+    
+        const token = await authenticateUserService.execute({ email, password });
+    
+        response.json(token);
+      }
 
 }

@@ -1,6 +1,5 @@
 import { inject, injectable } from 'tsyringe';
 import {IUserDTO} from "../dtos/user.dto";
-import {appDataSource} from "../../../../ormconfig";
 import { IUserRepository } from '../repositories/IUserRepository';
 import UserRepository from "../infra/typeorm/repositories/UserRepository";
 
