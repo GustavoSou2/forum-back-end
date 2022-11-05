@@ -20,13 +20,14 @@ const dataSource = new DataSource({
   synchronize: true,
   logging: true,
   entities: [
+    resolve(__dirname, 'entities/*.{ts,js}'),
     resolve(
         __dirname,
         '..',
         '..',
+        '..',
         'modules/**/infra/typeorm/entities/**/*.{ts,js}'
     ),
-      resolve(__dirname, 'entities/*.{ts,js}')
   ],
   migrations: [resolve(__dirname, 'migrations/*.{ts,js}')],
   subscribers: [],
