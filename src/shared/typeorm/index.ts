@@ -15,7 +15,7 @@ const dataSource = new DataSource({
   host: "127.0.0.1",
   port: 3306,
   username: "root",
-  password: "adm",
+  password: "admin",
   database: "blog",
   synchronize: true,
   logging: true,
