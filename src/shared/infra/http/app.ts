@@ -6,6 +6,7 @@ import {createConnection} from "../typeorm";
 
 const app = express();
 
+
 createConnection()
     .then(() => console.log('Connected to database'))
     .catch(() => console.log('Cannot connect to database'));
