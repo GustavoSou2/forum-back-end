@@ -7,6 +7,11 @@ import { ITokenManagerProvider } from '../../../shared/providers/ITokenManagerPr
 import { JwtTokenManagerProvider } from '../../../shared/providers/TokeManagerProvider/TokenManagerProvider';
 import { config } from 'dotenv-flow';
 
+interface IAuthenticationExecution {
+    email: string;
+    password: string;
+}
+
 interface IAuthentication {
     token: string;
 }
@@ -22,7 +27,7 @@ export default class AuthenticationService {
     private tokenManagerProvider: ITokenManagerProvider,
     ) {}
 
-    async execute({ email, password }): Promise<IAuthentication> {
+    async execute({ email, password }: IAuthenticationExecution): Promise<IAuthentication> {
         const alreadyByUsername = await this.userRepository.findByEmail(email)
 
         if (!alreadyByUsername) {

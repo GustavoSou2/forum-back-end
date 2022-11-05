@@ -6,19 +6,19 @@ import {IUserDTO} from "../../../dtos/user.dto";
 @Entity('users')
 export class UserEntity extends DefaultEntity implements IUserDTO{
     @PrimaryColumn()
-    id: string;
+    id!: string;
 
     @Column()
-    username: string;
+    username!: string;
 
     @Column()
-    email: string;
+    email!: string;
 
     @Column()
-    password: string;
+    password!: string;
 
     @Column()
-    has_details: boolean;
+    has_details!: boolean;
 
     constructor() {
         super();

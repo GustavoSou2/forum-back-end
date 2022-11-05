@@ -22,15 +22,15 @@ export default class UserRepository implements IUserRepository {
         return this.repo.save(newUser);
     }
 
-    find(id: string): Promise<IUserDTO> {
-        return this.repo.findOneBy({ id });
+    find(id: string): Promise<IUserDTO | null> {
+        return this.repo.findOneBy({ id }) ;
     }
 
-    findByUsername(username: string): Promise<IUserDTO> {
+    findByUsername(username: string): Promise<IUserDTO | null> {
         return this.repo.findOneBy({ username });
     }
 
-    findByEmail(email: string): Promise<IUserDTO> {
+    findByEmail(email: string): Promise<IUserDTO | null> {
         return this.repo.findOneBy({ email });
     }
 
