@@ -5,4 +5,7 @@ const express_1 = require("express");
 const user_routing_1 = require("../../../../modules/user/infra/http/routes/user.routing");
 const routes = (0, express_1.Router)();
 exports.routes = routes;
+routes.get('/', (req, res) => {
+    res.send('Forum API 🔥🔥🔥🚀');
+});
 routes.use('/users', user_routing_1.userRoutes);
