@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import * as dotenv from 'dotenv';
 import {app} from "./app";
 
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 3000;
 
 dotenv.config();
 
