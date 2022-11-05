@@ -5,7 +5,8 @@
     "dev:server": "ts-node-dev --transpile-only src/shared/http/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js ",
     "typeorm:run": "ts-node-dev node_modules/typeorm/cli.js -d ormconfig.ts migration:run",
-    "start": "node dist/src/shared/http/server.js"
+    "build": "rimraf dist/* && tsc -p tsconfig.json && tscpaths -p tsconfig.json -s . -o ./dist",
+    "start": "node src/shared/http/server.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
@@ -13,6 +14,7 @@
     "cors": "^2.8.5",
     "nodemon": "^2.0.20",
     "ts-node-dev": "^2.0.0",
+    "tscpaths": "^0.0.9",
     "tsyringe": "^4.7.0",
     "typescript": "^4.8.4"
   },
