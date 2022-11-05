@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 const dotenv = __importStar(require("dotenv"));
 const app_1 = require("./app");
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 3000;
 dotenv.config();
 app_1.app.listen(port, () => {
     console.info(`Server is running http://localhost:3333/${port}`);
