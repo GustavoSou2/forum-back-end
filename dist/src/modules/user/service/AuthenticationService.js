@@ -45,8 +45,6 @@ const TokenManagerProvider_1 = require("../../../shared/providers/TokeManagerPro
 const dotenv_flow_1 = require("dotenv-flow");
 (0, dotenv_flow_1.config)({ silent: true });
 let AuthenticationService = class AuthenticationService {
-    userRepository;
-    tokenManagerProvider;
     constructor(userRepository, tokenManagerProvider) {
         this.userRepository = userRepository;
         this.tokenManagerProvider = tokenManagerProvider;

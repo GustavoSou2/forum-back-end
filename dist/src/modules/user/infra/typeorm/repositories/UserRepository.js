@@ -12,11 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeorm_1 = __importDefault(require("../../../../../shared/typeorm"));
+const typeorm_1 = __importDefault(require("../../../../../shared/infra/typeorm"));
 const tsyringe_1 = require("tsyringe");
 const User_1 = require("../entities/User");
 let UserRepository = class UserRepository {
-    repo;
     constructor() {
         this.repo = typeorm_1.default.getRepository(User_1.UserEntity);
     }

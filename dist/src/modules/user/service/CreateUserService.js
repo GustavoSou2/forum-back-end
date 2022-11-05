@@ -42,7 +42,6 @@ const tsyringe_1 = require("tsyringe");
 const bcrypt = __importStar(require("bcrypt"));
 const UserRepository_1 = __importDefault(require("../infra/typeorm/repositories/UserRepository"));
 let CreateUserService = class CreateUserService {
-    userRepository;
     constructor(userRepository) {
         this.userRepository = userRepository;
     }

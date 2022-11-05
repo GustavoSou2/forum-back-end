@@ -8,7 +8,7 @@ require("reflect-metadata");
 const path_1 = require("path");
 const dotenv_flow_1 = require("dotenv-flow");
 const typeorm_1 = require("typeorm");
-const database_1 = __importDefault(require("../../database/database"));
+const database_1 = __importDefault(require("../../../database/database"));
 (0, dotenv_flow_1.config)({ silent: true });
 const databaseConfig = (0, database_1.default)();
 const dataSource = new typeorm_1.DataSource({

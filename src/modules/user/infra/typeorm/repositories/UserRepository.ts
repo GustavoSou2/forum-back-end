@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import dataSource from '../../../../../shared/typeorm';
+import dataSource from '../../../../../shared/infra/typeorm';
 import { IUserDTO } from '../../../dtos/user.dto';
 import { IUserRepository } from './../../../repositories/IUserRepository';
 import { injectable } from 'tsyringe';

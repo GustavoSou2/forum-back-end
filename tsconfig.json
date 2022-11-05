@@ -6,12 +6,12 @@
     ],
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "ES2022",
+    "target": "ES2020",
     "outDir": "./dist",
-    "baseUrl": "./src",
     "rootDir": ".",
     "strict": true,
-    "strictPropertyInitialization": true,
+    "strictPropertyInitialization": false,
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -20,18 +20,23 @@
     "allowJs": true,
     "checkJs": true,
     "diagnostics": true,
+    "paths": {
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ]
+    },
     "typeRoots": [
-      "@types",
-      "./node_modules/@types",
-      "./src/@types"
+      "./node_modules/@types"
     ]
   },
   "exclude": [
-    "node_modules",
+    "assets",
     "tsconfig.*"
-  ],
-  "include": [
-    "src",
-    "dist"
   ]
 }

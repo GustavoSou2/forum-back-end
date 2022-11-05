@@ -18,7 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tsyringe_1 = require("tsyringe");
 const UserRepository_1 = __importDefault(require("../infra/typeorm/repositories/UserRepository"));
 let FindUserService = class FindUserService {
-    userRepository;
     constructor(userRepository) {
         this.userRepository = userRepository;
     }

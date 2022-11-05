@@ -12,9 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DefaultEntity = void 0;
 const typeorm_1 = require("typeorm");
 class DefaultEntity {
-    createdAt;
-    updatedAt;
-    deletedAt;
 }
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ name: 'created_at' }),

@@ -1,6 +1,6 @@
 import {Entity, Column, CreateDateColumn, PrimaryColumn, PrimaryGeneratedColumn} from "typeorm";
 import { v4 as uuid } from "uuid";
-import {DefaultEntity} from "../../../../../shared/typeorm/entities/default";
+import {DefaultEntity} from "../../../../../shared/infra/typeorm/entities/default";
 import {IUserDTO} from "../../../dtos/user.dto";
 
 @Entity('users')

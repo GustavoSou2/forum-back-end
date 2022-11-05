@@ -12,13 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserEntity = void 0;
 const typeorm_1 = require("typeorm");
 const uuid_1 = require("uuid");
-const default_1 = require("../../../../../shared/typeorm/entities/default");
+const default_1 = require("../../../../../shared/infra/typeorm/entities/default");
 let UserEntity = class UserEntity extends default_1.DefaultEntity {
-    id;
-    username;
-    email;
-    password;
-    has_details;
     constructor() {
         super();
         if (!this.id) {
