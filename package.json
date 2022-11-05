@@ -5,7 +5,7 @@
     "dev:server": "ts-node-dev --transpile-only src/shared/http/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js ",
     "typeorm:run": "ts-node-dev node_modules/typeorm/cli.js -d ormconfig.ts migration:run",
-    "start": "node dist/src/shared/infra/http/server.js"
+    "start": "node dist/src/shared/http/server.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
