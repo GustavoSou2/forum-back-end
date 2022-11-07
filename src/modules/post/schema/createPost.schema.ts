@@ -1,10 +1,11 @@
 import Joi from 'joi';
 
 const createUserSchema = Joi.object({
-  username: Joi.string().required(),
-  email: Joi.string().email().required(),
-  password: Joi.string().min(8).required(),
-  hasDetail: Joi.boolean().optional(),
+  title: Joi.string().required(),
+  message: Joi.string().required(),
+  has_links: Joi.boolean().optional(),
+  has_tags: Joi.boolean().optional(),
+  has_images: Joi.boolean().optional(),
 });
 
 export default createUserSchema.options({
