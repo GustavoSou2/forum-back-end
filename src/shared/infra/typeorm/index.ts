@@ -6,7 +6,7 @@ import { IDatabase, database } from '../../../database/database';
 
 config({ silent: true });
 
-const databaseConfig: IDatabase = database(true);
+const databaseConfig: IDatabase = database(false);
 
 const dataSource = new DataSource({
   type: "mysql",
