@@ -14,13 +14,13 @@ export class CreateTablePosts1667817874382 implements MigrationInterface {
                     },
                     {
                         name: 'title',
-                        type: 'varchar(355)',
+                        type: 'varchar(255)',
                         isNullable: false,
                         isUnique: true
                     },
                     {
                         name: 'message',
-                        type: 'text',
+                        type: 'varchar(255)',
                         isNullable: false,
                         isUnique: true
                     },
