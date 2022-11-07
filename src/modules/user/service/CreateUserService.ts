@@ -1,10 +1,9 @@
 import { inject, injectable } from 'tsyringe';
 import {IUserDTO} from "../dtos/user.dto";
 import { IUserRepository } from '../repositories/IUserRepository';
-import * as bcrypt from 'bcrypt';
 import UserRepository from '../infra/typeorm/repositories/UserRepository';
 import { Subject } from 'typeorm/persistence/Subject';
-
+import * as bcrypt from 'bcrypt'
 @injectable()
 export default class CreateUserService {
     constructor(

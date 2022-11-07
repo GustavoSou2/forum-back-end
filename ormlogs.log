@@ -25,3 +25,115 @@
 [2022-11-01T20:46:27.164Z][QUERY ERROR]: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
 [2022-11-01T20:46:27.165Z]Migration "AlterTableUser1667308210134" failed, error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DROP COLUMN updated_at DROP COLUMN deleted_at' at line 1
 [2022-11-01T20:46:27.166Z][QUERY]: ROLLBACK
+[2022-11-07T13:13:07.010Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T13:13:07.079Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-07T13:13:07.087Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-07T13:13:07.092Z][QUERY]: START TRANSACTION
+[2022-11-07T13:13:07.093Z][QUERY]: SELECT DATABASE() AS `db_name`
+[2022-11-07T13:13:07.094Z][QUERY]: SELECT `TABLE_SCHEMA`, `TABLE_NAME` FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'users'
+[2022-11-07T13:13:07.097Z][QUERY]: 
+                SELECT
+                    *
+                FROM
+                    `INFORMATION_SCHEMA`.`COLUMNS`
+                WHERE
+                    `TABLE_SCHEMA` = 'blog'
+                    AND
+                    `TABLE_NAME` = 'users'
+                
+[2022-11-07T13:13:07.097Z][QUERY]: SELECT * FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'blog'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'users'
+            ) `kcu` WHERE `CONSTRAINT_NAME` = 'PRIMARY'
+[2022-11-07T13:13:07.097Z][QUERY]: 
+            SELECT
+                `SCHEMA_NAME`,
+                `DEFAULT_CHARACTER_SET_NAME` as `CHARSET`,
+                `DEFAULT_COLLATION_NAME` AS `COLLATION`
+            FROM `INFORMATION_SCHEMA`.`SCHEMATA`
+            
+[2022-11-07T13:13:07.098Z][QUERY]: 
+            SELECT
+                `s`.*
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`STATISTICS`
+                WHERE
+                    `TABLE_SCHEMA` = 'blog'
+                    AND
+                    `TABLE_NAME` = 'users'
+            ) `s`
+            LEFT JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'blog'
+                    AND
+                    `TABLE_NAME` = 'users'
+            ) `rc`
+                ON
+                    `s`.`INDEX_NAME` = `rc`.`CONSTRAINT_NAME`
+                    AND
+                    `s`.`TABLE_SCHEMA` = `rc`.`CONSTRAINT_SCHEMA`
+            WHERE
+                `s`.`INDEX_NAME` != 'PRIMARY'
+                AND
+                `rc`.`CONSTRAINT_NAME` IS NULL
+            
+[2022-11-07T13:13:07.098Z][QUERY]: 
+            SELECT
+                `kcu`.`TABLE_SCHEMA`,
+                `kcu`.`TABLE_NAME`,
+                `kcu`.`CONSTRAINT_NAME`,
+                `kcu`.`COLUMN_NAME`,
+                `kcu`.`REFERENCED_TABLE_SCHEMA`,
+                `kcu`.`REFERENCED_TABLE_NAME`,
+                `kcu`.`REFERENCED_COLUMN_NAME`,
+                `rc`.`DELETE_RULE` `ON_DELETE`,
+                `rc`.`UPDATE_RULE` `ON_UPDATE`
+            FROM (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`KEY_COLUMN_USAGE` `kcu`
+                WHERE
+                    `kcu`.`TABLE_SCHEMA` = 'blog'
+                    AND
+                    `kcu`.`TABLE_NAME` = 'users'
+            ) `kcu`
+            INNER JOIN (
+                SELECT
+                    *
+                FROM `INFORMATION_SCHEMA`.`REFERENTIAL_CONSTRAINTS`
+                WHERE
+                    `CONSTRAINT_SCHEMA` = 'blog'
+                    AND
+                    `TABLE_NAME` = 'users'
+            ) `rc`
+                ON
+                    `rc`.`CONSTRAINT_SCHEMA` = `kcu`.`CONSTRAINT_SCHEMA`
+                    AND
+                    `rc`.`TABLE_NAME` = `kcu`.`TABLE_NAME`
+                    AND
+                    `rc`.`CONSTRAINT_NAME` = `kcu`.`CONSTRAINT_NAME`
+            
+[2022-11-07T13:13:07.108Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T13:13:07.111Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'typeorm_metadata'
+[2022-11-07T13:13:07.115Z][QUERY]: COMMIT
+[2022-11-07T13:13:15.862Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T13:13:15.917Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-07T13:13:15.928Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-07T13:13:31.130Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T13:13:31.831Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-07T13:13:31.837Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-07T13:13:31.839Z]No migrations are pending
+[2022-11-07T13:13:53.732Z][QUERY]: SELECT VERSION() AS `version`
+[2022-11-07T13:13:54.401Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'blog' AND `TABLE_NAME` = 'migrations'
+[2022-11-07T13:13:54.408Z][QUERY]: SELECT * FROM `blog`.`migrations` `migrations` ORDER BY `id` DESC
+[2022-11-07T13:13:54.410Z]No migrations are pending

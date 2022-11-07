@@ -2,21 +2,21 @@ import 'reflect-metadata';
 import { resolve } from 'path';
 import { config } from 'dotenv-flow';
 import { DataSource } from 'typeorm';
-import database from '../../../database/database';
+import { IDatabase, database } from '../../../database/database';
 
 config({ silent: true });
 
-const databaseConfig = database();
+const databaseConfig: IDatabase = database(true);
 
 const dataSource = new DataSource({
+  type: "mysql",
   migrationsTableName: 'migrations',
   migrationsRun: true,
-  type: "mysql",
-  host: "us-cdbr-east-06.cleardb.net",
-  port: 3306,
-  username: "beb80608431dfb",
-  password: "af01bd07",
-  database: "heroku_3072c51389dd840",
+  host: databaseConfig.HOST,
+  port: databaseConfig.PORT,
+  username: databaseConfig.USER,
+  password: databaseConfig.PASSWORD,
+  database: databaseConfig.NAME,
   synchronize: true,
   logging: true,
   entities: [
@@ -29,7 +29,9 @@ const dataSource = new DataSource({
         'modules/**/infra/typeorm/entities/**/*.{ts,js}'
     ),
   ],
-  migrations: [resolve(__dirname, 'migrations/*.{ts,js}')],
+  migrations: [
+    resolve(__dirname, 'migrations/*.{ts,js}')
+],
   subscribers: [],
 })
 
